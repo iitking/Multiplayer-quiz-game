@@ -1,0 +1,14 @@
+{
+  "name": "multiplayer-quiz-game",
+  "version": "1.0.0",
+  "description": "Multiplayer Quiz Game with Synced Timer, Live Leaderboard, Teams, Power-ups & AI Quizzes",
+  "scripts": {
+    "start": "node server/src/server.js",
+    "server": "node server/src/server.js",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "dev": "node dev.js",
+    "test": "node test-e2e.js"
+  },
+  "type": "module"
+}
