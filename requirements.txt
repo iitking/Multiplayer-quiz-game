@@ -1,0 +1,78 @@
+# ==============================================================================
+# 🎮 MULTIPLAYER QUIZ GAME — SYSTEM & DEPENDENCIES REQUIREMENTS
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. RUNTIME & SYSTEM REQUIREMENTS
+# ------------------------------------------------------------------------------
+# Node.js: v18.0.0 or higher (v20+ or v24+ recommended)
+# npm:     v9.0.0 or higher
+# OS:      macOS / Linux / Windows
+#
+# Optional External Services (App has built-in In-Memory fallbacks):
+# - Redis:   v6.0+ (or Upstash Redis for production deployment)
+# - MongoDB: v6.0+ (or MongoDB Atlas for production deployment)
+# - AI Keys: GEMINI_API_KEY or OPENAI_API_KEY (Optional for AI Quiz Generator)
+
+# ------------------------------------------------------------------------------
+# 2. SERVER DEPENDENCIES (Node.js / Express / Socket.io)
+# ------------------------------------------------------------------------------
+# Located at: ./server/package.json
+# Install command: cd server && npm install
+
+express>=4.21.0           # HTTP REST Web Framework
+socket.io>=4.7.5          # Real-time WebSocket server engine
+ioredis>=5.4.1            # High-performance Redis client for sorted sets & pub/sub
+mongoose>=8.7.0           # MongoDB object modeling & schemas
+dotenv>=16.4.5            # Environment variable configuration (.env)
+cors>=2.8.5               # Cross-Origin Resource Sharing middleware
+bcryptjs>=2.4.3           # Password hashing for user authentication
+jsonwebtoken>=9.0.2       # JWT token generation for user sessions
+nanoid>=5.0.7             # Unique identifier generator
+
+# ------------------------------------------------------------------------------
+# 3. CLIENT DEPENDENCIES (React / Vite / Tailwind)
+# ------------------------------------------------------------------------------
+# Located at: ./client/package.json
+# Install command: cd client && npm install
+
+react>=18.3.1             # React UI component library
+react-dom>=18.3.1         # React DOM rendering engine
+socket.io-client>=4.7.5   # Real-time WebSocket client connector
+lucide-react>=0.446.0     # Modern lightweight UI icon library
+canvas-confetti>=1.9.3    # Winner celebration particle fireworks & confetti
+clsx>=2.1.1               # Dynamic utility class name composer
+tailwind-merge>=2.5.2     # Tailwind class conflict merger
+
+# Dev Dependencies (Client):
+vite>=5.4.2               # Lightning-fast frontend build tool & dev server
+@vitejs/plugin-react>=4.3.1 # React Fast Refresh plugin for Vite
+tailwindcss>=3.4.11       # Utility-first CSS framework
+postcss>=8.4.47           # CSS transformation tool
+autoprefixer>=10.4.20     # CSS vendor prefixer
+
+# ------------------------------------------------------------------------------
+# 4. ENVIRONMENT VARIABLES (.env)
+# ------------------------------------------------------------------------------
+# Server (.env):
+PORT=5001
+CLIENT_URL=http://localhost:5173
+JWT_SECRET=super-secret-quiz-game-key-999
+
+# Optional Cloud Services:
+# REDIS_URL=redis://localhost:6379
+# MONGO_URI=mongodb://localhost:27017/quizgame
+# GEMINI_API_KEY=your_gemini_api_key
+# OPENAI_API_KEY=your_openai_api_key
+
+# ------------------------------------------------------------------------------
+# 5. QUICK INSTALL & RUN INSTRUCTIONS
+# ------------------------------------------------------------------------------
+# Install all dependencies:
+#   cd server && npm install && cd ../client && npm install && cd ..
+#
+# Start development server (both server & client):
+#   npm run dev
+#
+# Run automated test suite:
+#   npm test
